@@ -1,16 +1,15 @@
 const express = require('express');
 // const { body, validationResult } = require("express-validator");    // anothor package
-const User = require("../models/User")
+const User = require("../models/User");
 
 const router = express.Router();
 
 
-
 // SignUp - createauser POST 
 router.post('/createuser', async (req, res) => {
-    const { name, email, password } = req.body;
-
     try {
+        const { name, email, password } = req.body;
+
         // check if user already exists
         let user = await User.findOne({ email: email });
         if (user) res.status(400).json({ error: "Sorry, User with this email already exists!" });
