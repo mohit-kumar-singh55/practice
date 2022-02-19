@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 // const { body, validationResult } = require("express-validator");    // anothor package
 const User = require("../models/User")
 
